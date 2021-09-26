@@ -5,7 +5,7 @@ import { combinedUserMapper } from '$lib/mappers/users'
 import errorCodes from '../errorCodes'
 
 export const updateUsername = async ({ username }) => {
-  const { data, error, status } = await supabase.from('users').update({ username })
+  const { data, error, status } = await supabase.from('profiles').update({ username })
 
   if (!error) {
     const currUser = await supabase.auth.user()
