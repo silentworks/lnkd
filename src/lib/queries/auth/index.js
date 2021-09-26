@@ -20,7 +20,6 @@ export const signOut = async () => {
   const { data, error } = await supabase.auth.signOut()
 
   if (!error) {
-    console.log(`signed out...`, error)
     return successMapper({
       message: 'Logged out successfully'
     })

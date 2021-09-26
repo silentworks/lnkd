@@ -1,9 +1,9 @@
 import { withDefault } from './internal.js'
 
 const userDetailMapper = (user) => ({
-  city: withDefault(user.city),
-  country: withDefault(user.country),
-  dob: withDefault(user.dob, null)
+  // city: withDefault(user.city),
+  country: withDefault(user.country)
+  // dob: withDefault(user.dob, null)
 })
 
 export const userMapper = (user) => ({

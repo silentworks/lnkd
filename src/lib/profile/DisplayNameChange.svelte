@@ -5,6 +5,7 @@
   import Loading from '$lib/common/Loading.svelte'
   import { user } from '$lib/common/stores'
   import { updateUsername } from '$lib/queries/users/updateUsername'
+  import { session } from '$app/stores'
 
   let toggleForm = false
   let message = ''
@@ -35,7 +36,7 @@
     if (!$form.username) handleReset()
   }
 
-  $: if ($user && $user.username) $form.username = $user.username
+  $: if ($session.user && $session?.user?.username) $form.username = $session.user.username
 </script>
 
 <div class="px-6 py-10 border-t bg-white border-gray-100 shadow-lg">
@@ -88,7 +89,7 @@
     {#if $user}
       <div>
         <div class="text-sm">Display Name</div>
-        <div class="px-1 py-3 mt-2">{$user.username}</div>
+        <div class="px-1 py-3 mt-2">{$session?.user?.username}</div>
       </div>
       <button
         on:click={() => (toggleForm = !toggleForm)}

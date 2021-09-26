@@ -3,7 +3,6 @@
   import * as yup from 'yup'
   import Alert from '$lib/common/Alert.svelte'
   import ModalWithTitleBar from '$lib/common/ModalWithTitleBar.svelte'
-  import { user } from '$lib/common/stores'
   import { updateUsername } from '$lib/queries/users/updateUsername'
   import { session } from '$app/stores'
 

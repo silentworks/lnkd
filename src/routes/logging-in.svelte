@@ -1,7 +1,6 @@
 <script>
   import { goto } from '$app/navigation'
   import Loading from '$lib/common/Loading.svelte'
-  import LoadingRelative from '$lib/common/LoadingRelative.svelte'
   import { onMount } from 'svelte'
   import { fly } from 'svelte/transition'
 

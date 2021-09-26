@@ -5,7 +5,6 @@
   import Header from '$lib/common/Header.svelte'
   import SubNav from '$lib/common/SubNav.svelte'
   import { Loader, loading } from '$lib/common/loader/index.js'
-  import UpdateUsername from '$lib/profile/UpdateUsername.svelte'
   import { setAuthCookie, unsetAuthCookie } from '$lib/session'
   import { getUserById } from '$lib/queries/users/getUserById'
   import { combinedUserMapper } from '$lib/mappers/users'
