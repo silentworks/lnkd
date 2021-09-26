@@ -1,7 +1,7 @@
 exports.up = async (client) => {
- 	await client`
+  await client`
 		CREATE TABLE public.profiles (
-			user_id uuid NOT NULL,
+			user_id uuid references auth.users NOT NULL,
 			username character varying,
 			full_name character varying,
 			country character varying,
@@ -10,12 +10,12 @@ exports.up = async (client) => {
 		)
 	`
 
-	await client`
+  await client`
 		ALTER TABLE ONLY public.profiles
 			ADD CONSTRAINT unique_username UNIQUE (username)
 	`
 
-	await client`
+  await client`
 		ALTER TABLE ONLY public.profiles
 			ADD CONSTRAINT users_pkey UNIQUE (user_id)
 	`
