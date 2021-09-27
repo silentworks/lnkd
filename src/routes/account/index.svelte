@@ -3,6 +3,7 @@
   import { loading } from '$lib/common/loader'
   import DisplayNameChange from '$lib/profile/DisplayNameChange.svelte'
   import PersonalInfo from '$lib/profile/PersonalInfo.svelte'
+  import EmailChange from '$lib/profile/EmailChange.svelte'
 
   onMount(() => {
     loading.set(false)
@@ -13,4 +14,6 @@
   <PersonalInfo />
 
   <DisplayNameChange />
+
+  <EmailChange />
 </div>

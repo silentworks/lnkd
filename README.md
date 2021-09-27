@@ -4,6 +4,22 @@ This is a SvelteKit, Tailwind and Supabase project. This project is a one link p
 
 ## Developing
 
+Copy the `env.example` and name it `.env`
+
+Edit the file and enter all the required variable values
+
+```
+VITE_PUBLIC_APP_NAME=lnkd
+VITE_PUBLIC_APP_URL=http://localhost:3000/
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+SUPABASE_PRIVATE_KEY=
+SUPABASE_JWT_SECRET=
+DATABASE_URL=
+```
+
+The "DATABASE_URL" can be found under **Settings/Database**
+
 Once you've created a project and installed dependencies with `pnpm install`, start a development server:
 
 ```bash

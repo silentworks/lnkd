@@ -1,8 +1,8 @@
 <script>
+  import { session } from '$app/stores'
   //   import { resetPassword } from '@/supabase.js'
   import Alert from '$lib/common/Alert.svelte'
   import Loading from '$lib/common/Loading.svelte'
-  //   import { user } from '@/shared/stores.js'
 
   let message = ''
   let messageType = 'error'
@@ -30,7 +30,7 @@
   <Alert {message} {messageType} />
 
   <div class="flex flex-row justify-between">
-    <!-- {#if $user}
+    {#if $session.user}
       <div>
         <div class="text-sm">Password</div>
         <div class="px-1 py-3 mt-2">You can change your password</div>
@@ -42,7 +42,7 @@
           </div>
         {:else}
           <button
-            on:click={() => passwordReset($user.email)}
+            on:click={() => passwordReset($session.user?.email)}
             type="button"
             class="px-4 py-2 font-medium text-white bg-gray-800 rounded-sm hover:bg-gray-700"
           >
@@ -50,10 +50,10 @@
           </button>
         {/if}
       </div>
-    {:else} -->
-    <div class="relative w-full h-14">
-      <Loading size="small" />
-    </div>
-    <!-- {/if} -->
+    {:else}
+      <div class="relative w-full h-14">
+        <Loading size="small" />
+      </div>
+    {/if}
   </div>
 </div>

@@ -11,7 +11,7 @@
 <div class="col-span-12 md:col-span-2">
   <div class="space-y-4">
     <Tab href="/account" active={$page.path == '/account'}>Profile</Tab>
-    <Tab href="/account/security" active={$page.path == '/account/security'}>Security</Tab>
+    <Tab href="/account/settings" active={$page.path == '/account/settings'}>Settings</Tab>
   </div>
 </div>
 <div class="col-span-12 md:col-span-10 pl-6">

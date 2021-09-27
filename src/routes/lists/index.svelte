@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   // import { getAllLists, makePublicLink } from '@/supabase.js'
   // import { user, lists } from '@/shared/stores.js'
-  // import LoadingRelative from '@/features/common/LoadingRelative.svelte'
+  import LoadingRelative from '$lib/common/LoadingRelative.svelte'
 
   export let meta = {}
   let loading = false
@@ -17,7 +17,7 @@
 
 {#if loading}
   <div class="flex flex-col col-span-12 rounded-md pt-8 h-60 relative">
-    <!-- <LoadingRelative /> -->
+    <LoadingRelative />
   </div>
 {:else}
   {#each lists as list}
@@ -55,7 +55,7 @@
     </div>
   {:else}
     <div
-      class="flex flex-col col-span-3 rounded-md content-end mr-10 px-4 pt-8 h-60 sm:px-3 sm:py-4 bg-white"
+      class="flex flex-col col-span-12 sm:col-span-3 rounded-md mb-6 sm:mb-0 content-end sm:mr-10 px-6 sm:h-60 sm:px-4 bg-white"
     >
       <div class="relative py-10 sm:py-20">
         <p class="text-center">There are currently no lists, click the plus to add a new one.</p>
@@ -63,7 +63,7 @@
     </div>
     <a
       href="/lists/new"
-      class="flex flex-col col-span-3 items-center justify-center rounded-md content-end mr-10 px-4 pt-8 h-60 sm:px-3 sm:py-4 bg-gradient-to-b from-green-400 to-blue-400"
+      class="flex flex-col col-span-6 sm:col-span-3 items-center justify-center rounded-md content-end sm:mr-10 px-4 pt-8 sm:h-60 h-48 sm:px-3 sm:py-4 bg-gradient-to-b from-green-400 to-blue-400"
     >
       <svg
         class="w-10 h-10 text-white fill-current"
