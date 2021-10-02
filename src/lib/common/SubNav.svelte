@@ -5,10 +5,10 @@
 <ul class="flex">
   <li>
     <a
-      href="/lists"
+      href="/manage/lists"
       class="flex space-x-1 pr-6 py-4 border-white text-white opacity-40"
-      class:opacity-100={pagePath.includes('/lists')}
-      class:border-b-2={pagePath.includes('/lists')}
+      class:opacity-100={pagePath.includes('/manage/lists')}
+      class:border-b-2={pagePath.includes('/manage/lists')}
     >
       <svg
         class="w-6 h-6"
@@ -29,10 +29,10 @@
   </li>
   <li>
     <a
-      href="/account"
+      href="/manage/account"
       class="flex space-x-1 px-4 py-4 border-white text-white opacity-40"
-      class:opacity-100={pagePath.includes('/account')}
-      class:border-b-2={pagePath.includes('/account')}
+      class:opacity-100={pagePath.includes('/manage/account')}
+      class:border-b-2={pagePath.includes('/manage/account')}
     >
       <svg
         class="w-6 h-6"

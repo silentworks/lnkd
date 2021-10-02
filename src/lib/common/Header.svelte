@@ -27,7 +27,7 @@
           <div class="flex items-center">
             <a
               class="text-xl font-bold text-gray-800 dark:text-white md:text-2xl hover:text-gray-700 dark:hover:text-gray-300"
-              href="/">Lnkd</a
+              href="/manage">Lnkd</a
             >
 
             <!-- Search input on desktop screen -->
@@ -88,7 +88,7 @@
 
                   <div class="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-2xl">
                     <a
-                      href="/account"
+                      href="/manage/account"
                       class="block px-4 py-2 text-sm text-gray-700 capitalize hover:bg-blue-500 hover:text-white"
                     >
                       your profile
@@ -104,7 +104,7 @@
                 {/if}
               </div>
               <a
-                href="/lists/new"
+                href="/manage/lists/new"
                 class="flex w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white bg-blue-500 rounded-md hover:bg-blue-600 md:mx-2 md:w-auto md:ml-4"
               >
                 <span class="block p-1 pl-0 rounded-md focus:outline-none">

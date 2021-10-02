@@ -23,10 +23,10 @@
   {#each lists as list}
     <div
       class="flex flex-col col-span-3 rounded-md content-end mr-10 px-4 pt-8 h-60 sm:px-3 sm:py-4 bg-gradient-to-b from-green-400 to-blue-400"
-      class:bg-gray-200={meta.url == `/lists/${list.id}`}
-      class:text-white={meta.url == `/lists/${list.id}`}
+      class:bg-gray-200={meta.url == `/manage/lists/${list.id}`}
+      class:text-white={meta.url == `/manage/lists/${list.id}`}
     >
-      <a href="/lists/{list.id}" class="flex-grow block pt-4">
+      <a href="/manage/lists/{list.id}" class="flex-grow block pt-4">
         <h2 class="text-2xl font-normal text-white mb-4">{list.title}</h2>
         <p class="font-sans text-xs text-white opacity-80 font-extralight">
           <!-- {makePublicLink($user.displayName, list.alias).replace('http://', '')} -->
@@ -62,7 +62,7 @@
       </div>
     </div>
     <a
-      href="/lists/new"
+      href="/manage/lists/new"
       class="flex flex-col col-span-6 sm:col-span-3 items-center justify-center rounded-md content-end sm:mr-10 px-4 pt-8 sm:h-60 h-48 sm:px-3 sm:py-4 bg-gradient-to-b from-green-400 to-blue-400"
     >
       <svg

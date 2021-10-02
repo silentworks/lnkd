@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@supabase/supabase-js': ^1.8.0
+  '@sveltejs/adapter-node': ^1.0.0-next.51
   '@sveltejs/kit': next
   autoprefixer: ^10.3.4
   cookie: ^0.4.1
@@ -27,7 +28,8 @@ dependencies:
 
 devDependencies:
   '@supabase/supabase-js': 1.22.6
-  '@sveltejs/kit': 1.0.0-next.173_svelte@3.42.6
+  '@sveltejs/adapter-node': 1.0.0-next.51
+  '@sveltejs/kit': 1.0.0-next.176_svelte@3.42.6
   autoprefixer: 10.3.4_postcss@8.3.6
   cssnano: 5.0.8_postcss@8.3.6
   dotenv: 10.0.0
@@ -135,8 +137,15 @@ packages:
       '@supabase/storage-js': 1.4.1
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.173_svelte@3.42.6:
-    resolution: {integrity: sha512-gOnRwCw9O+dXfpUe8GO9PEe20TWiIpgIDjG3zabCjMUV2XLpOsvPCO9j65xCPce00RljQGBuwn+NTYKteg2jvw==}
+  /@sveltejs/adapter-node/1.0.0-next.51:
+    resolution: {integrity: sha512-RMT6BQcNJZkGZskgHiZMsnjMWHXMiE5h30Aws9h1Cnc4+80ws6llWNqHglzP63ENahUHWBW+h9DVcDskHnP9bQ==}
+    dependencies:
+      esbuild: 0.12.28
+      tiny-glob: 0.2.9
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.176_svelte@3.42.6:
+    resolution: {integrity: sha512-aFwZ1PjOcxOSAX93Py3jfJBgZgWmANO5Vt2fb8abvNGLTA/d6VVArdPXSccaSxLYCGmgzvx+CAr8P+P8FcJ+Ng==}
     engines: {node: ^12.20 || >=14.13}
     hasBin: true
     peerDependencies:
@@ -817,6 +826,14 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
+    dev: true
+
+  /globalyzer/0.1.0:
+    resolution: {integrity: sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==}
+    dev: true
+
+  /globrex/0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
   /graceful-fs/4.2.8:
@@ -1879,6 +1896,13 @@ packages:
 
   /timsort/0.3.0:
     resolution: {integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=}
+    dev: true
+
+  /tiny-glob/0.2.9:
+    resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
+    dependencies:
+      globalyzer: 0.1.0
+      globrex: 0.1.2
     dev: true
 
   /tmp/0.2.1:

@@ -12,7 +12,7 @@
   let message = ''
   let messageType = 'error'
 
-  const redirectTo = `${VITE_PUBLIC_APP_URL}logging-in`
+  const redirectTo = `${VITE_PUBLIC_APP_URL}manage/logging-in`
 
   onMount(() => {
     loading.set(false)
