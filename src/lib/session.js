@@ -1,5 +1,3 @@
-import supabase from './db'
-
 export async function setServerSession(event, session) {
   await fetch('/api/auth.json', {
     method: 'POST',

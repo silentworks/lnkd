@@ -1,6 +1,6 @@
 <script>
   import { page, session } from '$app/stores'
-  import Header from '$lib/common/Header.svelte'
+  import AppHeader from '$lib/common/AppHeader.svelte'
   import SubNav from '$lib/common/SubNav.svelte'
   import { Loader, loading } from '$lib/common/loader/index.js'
   import { setAuthCookie, unsetAuthCookie } from '$lib/session'
@@ -27,7 +27,7 @@
 
 <div class="wrapper">
   <Loader />
-  <Header />
+  <AppHeader />
 
   <main class="container px-5 mx-auto">
     <div class="w-full mx-auto md:max-w-5xl">
@@ -42,3 +42,9 @@
     </div>
   </main>
 </div>
+
+<style>
+  :global(body) {
+    @apply bg-gray-800;
+  }
+</style>
