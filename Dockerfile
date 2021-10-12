@@ -12,6 +12,7 @@ FROM node:alpine AS builder
 WORKDIR /app
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+ENV NODE_ENV=production
 RUN npm install -g pnpm
 RUN pnpm build && pnpm install --prod --ignore-scripts --prefer-offline
 
@@ -19,7 +20,7 @@ RUN pnpm build && pnpm install --prod --ignore-scripts --prefer-offline
 FROM node:alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # RUN addgroup -g 1001 -S nodejs
 # RUN adduser -S nextjs -u 1001
