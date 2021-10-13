@@ -1,7 +1,7 @@
 import { session } from '$app/stores'
 import supabase from '$lib/db'
 import { successMapper, errorMapper } from '$lib/mappers/internal'
-import { userToDBMapper } from '$lib/mappers/users'
+import { userToDBMapper, combinedUserMapper } from '$lib/mappers/users'
 
 export const updateAccount = async ({ fullName, country }) => {
   const { error, data } = await supabase

@@ -22,9 +22,7 @@
       }),
       onSubmit: async ({ fullName, country }) => {
         message = ''
-        console.log('submit called -->')
         const response = await updateAccount({ fullName, country })
-        console.log('response back -->')
         if (response.statusCode === 200) {
           messageType = 'success'
           toggleForm = false

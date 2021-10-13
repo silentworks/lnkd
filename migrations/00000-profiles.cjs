@@ -1,6 +1,7 @@
 exports.up = async (client) => {
   await client`
 		CREATE TABLE public.profiles (
+			id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
 			user_id uuid references auth.users NOT NULL,
 			username character varying,
 			full_name character varying,

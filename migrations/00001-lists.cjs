@@ -1,6 +1,7 @@
 exports.up = async client => {
 	await client`
 		CREATE TABLE public.lists (
+			id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
 			title character varying,
 			slug character varying,
 			description TEXT,

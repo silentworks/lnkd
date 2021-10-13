@@ -1,8 +1,6 @@
 <script>
-  import { onMount } from 'svelte'
   import { createForm } from 'svelte-forms-lib'
   import * as yup from 'yup'
-  import { loading } from '$lib/common/loader'
   import Alert from '$lib/common/Alert.svelte'
   import PageHeading from '$lib/auth/PageHeading.svelte'
   import GitHubButton from '$lib/common/buttons/GitHubButton.svelte'
@@ -13,10 +11,6 @@
   let messageType = 'error'
 
   const redirectTo = `${VITE_PUBLIC_APP_URL}manage/logging-in`
-
-  onMount(() => {
-    loading.set(false)
-  })
 
   const { form, errors, handleChange, handleSubmit, handleReset, isValid, isSubmitting } =
     createForm({
