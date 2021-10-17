@@ -12,8 +12,12 @@ FROM node:alpine AS builder
 WORKDIR /app
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+ARG VITE_SUPABASE_URL
+ENV VITE_SUPABASE_URL ${VITE_SUPABASE_URL}
 ENV NODE_ENV production
 RUN echo $NODE_ENV
+RUN echo $VITE_PUBLIC_APP_LINK_URL
+RUN echo $VITE_SUPABASE_URL
 RUN npm install -g pnpm
 RUN pnpm build && pnpm install --prod --ignore-scripts --prefer-offline
 
