@@ -3,9 +3,12 @@
   import * as yup from 'yup'
   import Alert from '$lib/common/Alert.svelte'
   import { slugify } from '$lib/common/text.js'
+  import { addList } from '$lib/queries/lists/addList'
+  import { goto } from '$app/navigation'
 
-  let alias = ''
-  let listError = ''
+  let slug = ''
+  let message = ''
+  let messageType = 'error'
 
   const { form, errors, handleChange, handleSubmit, isSubmitting } = createForm({
     initialValues: {
@@ -17,16 +20,17 @@
       description: yup.string().required()
     }),
     onSubmit: async ({ title, description }) => {
-      // listError = ''
-      // const response = await addList({ title, alias, description })
-      // if (response.statusCode === 200) {
-      //   router.goto('/lists')
-      // }
-      // listError = response.message
+      message = ''
+      const response = await addList({ title, slug, description })
+      if (response.statusCode === 200) {
+        goto('/manage/lists')
+        messageType = 'success'
+      }
+      message = response.message
     }
   })
 
-  $: alias = slugify($form.title)
+  $: slug = slugify($form.title)
 </script>
 
 <!-- <div slot="titleAction" class="flex flex-row content-center">
@@ -45,7 +49,7 @@
       <div
         class="col-span-12 px-6 py-10 bg-white border-t border-b border-gray-100 shadow-sm sm:py-6"
       >
-        <Alert message={listError} />
+        <Alert {message} {messageType} />
 
         <div class="flex flex-col gap-4">
           <div class="flex-grow">

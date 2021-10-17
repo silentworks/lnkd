@@ -22,7 +22,7 @@ export const loggedInUserMapper = (user) => ({
   last_sign_in_at: user.last_sign_in_at,
   authenticated: user.aud === 'authenticated',
   email: user.email,
-  id: user.id,
+  id: user.user_id,
   verified: withDefault(user.emailVerification, false),
   username: withDefault(user.username)
 })

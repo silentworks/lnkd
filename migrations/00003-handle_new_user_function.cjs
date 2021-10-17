@@ -20,6 +20,8 @@ exports.up = async client => {
 };
 
 exports.down = async client => {
+  // await client`alter user postgres with superuser;`
 	await client`drop trigger if exists on_auth_user_created on auth.users;`
 	await client`drop function if exists public.handle_new_user();`
+  // await client`alter user postgres with nosuperuser;`
 };

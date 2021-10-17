@@ -2,23 +2,23 @@ import supabase from '$lib/db'
 import { session } from '$app/stores'
 import { combinedUserMapper } from '$lib/mappers/users'
 import { auth, user } from '../common/stores'
-import { getUserById } from './users/getUserById'
+import { getProfile } from '../users/getProfile'
 import { setAuthCookie, unsetAuthCookie } from '$lib/session'
 
 export const checkAuthState = () => {
   async function sessionSetup(session) {
-    const currUser = await getUserById(session.user.id)
+    const currUser = await getProfile()
     console.log(`session checking`)
     user.set(combinedUserMapper({ ...session.user, ...currUser }) ?? null)
-    auth.setLoggedIn();
+    auth.setLoggedIn()
   }
 
   async function check() {
-		const session = supabase.auth.session();
-		if (session) sessionSetup(session);
-	}
+    const session = supabase.auth.session()
+    if (session) sessionSetup(session)
+  }
 
-	check();
+  check()
 
   const { data: authListener } = supabase.auth.onAuthStateChange(async (event, _session) => {
     if (event === 'SIGNED_IN') {
@@ -30,7 +30,7 @@ export const checkAuthState = () => {
     if (event === 'SIGNED_OUT') {
       session.set({ user: { guest: true } })
       await unsetAuthCookie()
-      auth.reset();
+      auth.reset()
     }
   })
 

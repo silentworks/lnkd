@@ -5,7 +5,8 @@ exports.up = async client => {
 			title character varying,
 			slug character varying,
 			description TEXT,
-			user_id uuid NOT NULL,
+			published INT DEFAULT 0,
+			user_id uuid references auth.users NOT NULL,
 			created_at timestamp with time zone DEFAULT now() NOT NULL,
 			updated_at timestamp with time zone
 		)

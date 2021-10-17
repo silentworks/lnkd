@@ -1,13 +1,13 @@
 import supabase from '$lib/db'
 import { toExpressRequest, toExpressResponse, toSvelteKitResponse } from '$lib/expressify'
 import { combinedUserMapper } from '$lib/mappers/users'
-import { getUserById } from '$lib/queries/users/getUserById'
+import { getProfileById } from '$lib/queries/users/getProfile'
 
 export async function handleAuth({ request, resolve }) {
   // Converts request to have `req.headers.cookie` on `req.cookies, as `getUserByCookie` expects parsed cookies on `req.cookies`
   const expressStyleRequest = toExpressRequest(request)
   const { user } = await supabase.auth.api.getUserByCookie(expressStyleRequest)
-  const profile = await getUserById(user?.id)
+  const profile = await getProfileById(user?.id)
   request.locals.token = expressStyleRequest.cookies['sb:token'] || undefined
   request.locals.user = combinedUserMapper({ ...user, ...profile })
 

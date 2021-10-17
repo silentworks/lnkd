@@ -4,14 +4,14 @@
   import SubNav from '$lib/common/SubNav.svelte'
   import { Loader, loading } from '$lib/common/loader/index.js'
   import { setAuthCookie, unsetAuthCookie } from '$lib/session'
-  import { getUserById } from '$lib/queries/users/getUserById'
+  import { getProfile } from '$lib/queries/users/getProfile'
   import { combinedUserMapper } from '$lib/mappers/users'
   import supabase from '$lib/db'
 
   supabase.auth.onAuthStateChange(async (event, _session) => {
     if (event !== 'SIGNED_OUT') {
       await setAuthCookie(_session)
-      const profile = await getUserById(_session.user?.id)
+      const profile = await getProfile()
       const user = combinedUserMapper({ ..._session.user, ...profile })
       session.set({ user })
     } else {

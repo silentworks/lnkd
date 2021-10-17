@@ -1,4 +1,18 @@
+<script context="module">
+  export const load = async ({ session }) => {
+    if (session?.user?.id) {
+      return {
+        status: 307,
+        redirect: '/manage'
+      }
+    }
+
+    return {}
+  }
+</script>
+
 <script>
+  import { session } from '$app/stores'
   import { Loader } from '$lib/common/loader'
 </script>
 
