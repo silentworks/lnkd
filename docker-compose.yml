@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        VITE_SUPABASE_URL: https://evrhouravimnlzqlufil.supabase.co
+        VITE_PUBLIC_APP_LINK_URL: http://localhost:3000/
     ports:
       - 80:3000
     volumes:
