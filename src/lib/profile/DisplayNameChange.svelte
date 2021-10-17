@@ -3,7 +3,6 @@
   import * as yup from 'yup'
   import Alert from '$lib/common/Alert.svelte'
   import Loading from '$lib/common/Loading.svelte'
-  import { user } from '$lib/common/stores'
   import { updateUsername } from '$lib/queries/users/updateUsername'
   import { session } from '$app/stores'
 
@@ -86,7 +85,7 @@
   </form>
 
   <div class="flex flex-row justify-between" class:hidden={toggleForm}>
-    {#if $user}
+    {#if $session?.user}
       <div>
         <div class="text-sm">Display Name</div>
         <div class="px-1 py-3 mt-2">{$session?.user?.username}</div>
