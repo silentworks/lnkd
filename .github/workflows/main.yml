@@ -18,6 +18,8 @@ jobs:
         uses: superfly/flyctl-actions@1.1
         with:
           args: "deploy"
-          build-args: VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
+          build-args: |
+            VITE_PUBLIC_APP_LINK_URL=${{ secrets.VITE_PUBLIC_APP_LINK_URL }}
+            VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
