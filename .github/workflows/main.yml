@@ -6,6 +6,12 @@ jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
+    env:
+      VITE_PUBLIC_APP_NAME: lnkd
+      VITE_PUBLIC_APP_URL: ${{ secrets.VITE_PUBLIC_APP_URL }}
+      VITE_PUBLIC_APP_LINK_URL: ${{ secrets.VITE_PUBLIC_APP_LINK_URL }}
+      VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
     steps:
       - name: Checkout app
         uses: actions/checkout@v2
@@ -15,9 +21,3 @@ jobs:
         with:
           args: "deploy"
           build-args: VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
-        env:
-          VITE_PUBLIC_APP_NAME: lnkd
-          VITE_PUBLIC_APP_URL: ${{ secrets.VITE_PUBLIC_APP_URL }}
-          VITE_PUBLIC_APP_LINK_URL: ${{ secrets.VITE_PUBLIC_APP_LINK_URL }}
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
