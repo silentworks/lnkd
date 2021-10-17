@@ -7,6 +7,6 @@ try {
   // log.error({ error });
 }
 
-export const { VITE_PUBLIC_APP_URL, VITE_PUBLIC_APP_NAME, VITE_PUBLIC_APP_LINK_URL } = !importEnv
+export const { VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, VITE_PUBLIC_APP_LINK_URL } = !importEnv
   ? process.env
   : import.meta.env

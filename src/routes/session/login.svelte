@@ -5,12 +5,12 @@
   import PageHeading from '$lib/auth/PageHeading.svelte'
   import GitHubButton from '$lib/common/buttons/GitHubButton.svelte'
   import { signInMagicLink } from '$lib/queries/auth'
-  import { VITE_PUBLIC_APP_URL } from '$lib/env'
+  import { VITE_SUPABASE_ANON_KEY } from '$lib/env'
 
   let message = ''
   let messageType = 'error'
 
-  const redirectTo = `${VITE_PUBLIC_APP_URL}manage/logging-in`
+  const redirectTo = `${VITE_SUPABASE_ANON_KEY}manage/logging-in`
 
   const { form, errors, handleChange, handleSubmit, handleReset, isValid, isSubmitting } =
     createForm({
