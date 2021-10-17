@@ -1,13 +1,25 @@
+<script context="module">
+  export async function load({ page }) {
+    const res = await getListBySlug(page.params.id)
+
+    if (res.statusCode == 200) {
+      return {
+        props: {
+          item: res.data
+        }
+      }
+    }
+
+    return {}
+  }
+</script>
+
 <script>
   import { page } from '$app/stores'
-
-  // import { getList, getLinks, makePublicLink } from "@/supabase.js";
   import TitleDescriptionChange from '$lib/list/TitleDescriptionChange.svelte'
-  // import { user, lists } from "@/shared/stores.js";
+  import { getListBySlug } from '$lib/queries/lists/getList'
 
-  // export let meta = {};
-
-  let item
+  export let item
   let links = []
   let id = ''
 
@@ -47,7 +59,7 @@
     <div class="col-span-12 py-2 px-6 sm:py-6">
       <div class="flex justify-center items-center">
         <a
-          href="/lists/{id}/new"
+          href="/manage/lists/{id}/new"
           class="px-6 py-3 font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-sm focus:outline-none hover:shadow-none"
           >Add new link</a
         >

@@ -15,6 +15,8 @@
 </script>
 
 <script>
+  import { session } from '$app/stores'
+  import { makePublicLink } from '$lib/common/url'
   import { getAllLists } from '$lib/queries/lists/getAllLists'
 
   export let lists = []
@@ -24,10 +26,10 @@
   <div
     class="flex flex-col col-span-3 rounded-md content-end mr-10 px-4 pt-8 h-60 sm:px-3 sm:py-4 bg-gradient-to-b from-green-400 to-blue-400"
   >
-    <a href="/manage/lists/{list.id}" class="flex-grow block pt-4">
+    <a href="/manage/lists/{list.slug}" class="flex-grow block pt-4">
       <h2 class="text-2xl font-normal text-white mb-4">{list.title}</h2>
       <p class="font-sans text-xs text-white opacity-80 font-extralight">
-        <!-- {makePublicLink($user.displayName, list.alias).replace('http://', '')} -->
+        {makePublicLink($session.user.username, list.slug).replace('http://', '')}
       </p>
     </a>
     <div class="flex justify-between space-x-4 py-1">
@@ -40,7 +42,7 @@
       </button>
       <a
         class="text-white bg-blue-400 hover:bg-blue-300 inline-flex items-center space-x-2 rounded-full px-3 py-1"
-        href="/"
+        href={makePublicLink($session.user.username, list.slug).replace('http:', '')}
       >
         <svg class="w-3 h-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           ><path

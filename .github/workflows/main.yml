@@ -1,0 +1,13 @@
+name: Fly deploy
+on: [push]
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - uses: superfly/flyctl-actions@1.1
+        with:
+          args: "deploy"
