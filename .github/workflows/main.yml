@@ -12,7 +12,12 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: superfly/flyctl-actions@1.1
+      - name: Checkout app
+        uses: actions/checkout@v2
+        with:
+          build-args: VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
+
+      - name: Deploy app
+        uses: superfly/flyctl-actions@1.1
         with:
           args: "deploy"
