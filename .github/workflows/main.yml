@@ -1,7 +1,6 @@
 name: Fly deploy
 on: [push]
 env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
   VITE_PUBLIC_APP_NAME: lnkd
   VITE_PUBLIC_APP_URL: ${{ secrets.VITE_PUBLIC_APP_URL }}
   VITE_PUBLIC_APP_LINK_URL: ${{ secrets.VITE_PUBLIC_APP_LINK_URL }}
@@ -20,3 +19,5 @@ jobs:
         with:
           args: "deploy"
           build-args: VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
