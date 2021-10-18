@@ -16,7 +16,7 @@
 
 <script>
   import { session } from '$app/stores'
-  import { makePublicLink } from '$lib/common/url'
+  import { makePublicLink } from '$lib/common/util'
   import { getAllLists } from '$lib/queries/lists/getAllLists'
 
   export let lists = []
