@@ -3,7 +3,7 @@
   import * as yup from 'yup'
   import Alert from '$lib/common/Alert.svelte'
   import Loading from '$lib/common/Loading.svelte'
-  // import { updateListTitleDesc } from "@/supabase.js";
+  import { updateListTitleDesc } from '$lib/queries/lists/updateListTitleDesc'
 
   export let item
 
@@ -22,16 +22,16 @@
     }),
     onSubmit: async ({ title, description }) => {
       message = ''
-      // const response = await updateListTitleDesc({ id: item.id, title, description });
+      messageType = 'error'
+      const response = await updateListTitleDesc({ id: item.id, title, description })
 
-      // if (response.statusCode === 200) {
-      // 	messageType = "success";
-      // 	toggle = false;
-      // }
+      if (response.statusCode === 200) {
+        messageType = 'success'
+        item = response.data
+        toggle = false
+      }
 
-      // if (response.statusCode === 400) messageType = "error";
-
-      // message = response.message;
+      message = response.message
     }
   })
 

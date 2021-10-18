@@ -35,7 +35,7 @@
   })
 
   const close = () => {
-    goto(`/lists/${$page.params.id}`)
+    goto(`/manage/lists/${$page.params.id}`)
   }
 </script>
 
@@ -81,7 +81,7 @@
     </div>
   </form>
 
-  <slot slot="footer">
+  <svelte:fragment slot="footer">
     <button
       type="submit"
       form="add-link"
@@ -96,5 +96,5 @@
     >
       Cancel
     </button>
-  </slot>
+  </svelte:fragment>
 </ModalWithTitleBar>

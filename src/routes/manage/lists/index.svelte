@@ -26,7 +26,7 @@
   <div
     class="flex flex-col col-span-3 rounded-md content-end mr-10 px-4 pt-8 h-60 sm:px-3 sm:py-4 bg-gradient-to-b from-green-400 to-blue-400"
   >
-    <a href="/manage/lists/{list.slug}" class="flex-grow block pt-4">
+    <a href="/manage/lists/{list.id}" class="flex-grow block pt-4">
       <h2 class="text-2xl font-normal text-white mb-4">{list.title}</h2>
       <p class="font-sans text-xs text-white opacity-80 font-extralight">
         {makePublicLink($session.user.username, list.slug).replace('http://', '')}
