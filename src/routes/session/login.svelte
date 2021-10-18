@@ -32,6 +32,10 @@
     })
 </script>
 
+<svelte:head>
+  <title>Sign in or create a free account - Lnkd</title>
+</svelte:head>
+
 <PageHeading>Sign in or create a free account</PageHeading>
 
 <Alert {message} {messageType} duration={12000} class="my-6" />
