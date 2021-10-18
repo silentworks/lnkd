@@ -14,27 +14,28 @@
 		"m:status": "ley status"
 	},
 	"devDependencies": {
-		"@supabase/supabase-js": "^1.8.0",
-		"@sveltejs/adapter-node": "^1.0.0-next.51",
+		"@supabase/supabase-js": "^1.24.0",
+		"@sveltejs/adapter-node": "^1.0.0-next.55",
 		"@sveltejs/kit": "next",
-		"autoprefixer": "^10.3.4",
+		"autoprefixer": "^10.3.7",
 		"cssnano": "^5.0.8",
 		"dotenv": "^10.0.0",
 		"ley": "^0.7.1",
 		"pg-connection-string": "^2.5.0",
-		"postcss": "^8.3.6",
+		"postcss": "^8.3.9",
+		"postcss-import": "^14.0.2",
 		"postcss-load-config": "^3.1.0",
 		"postgres": "^1.0.2",
 		"prettier": "^2.4.1",
 		"prettier-plugin-svelte": "^2.4.0",
-		"svelte": "^3.42.6",
-		"svelte-preprocess": "^4.9.4",
-		"tailwindcss": "^2.2.15"
+		"svelte": "^3.44.0",
+		"svelte-preprocess": "^4.9.8",
+		"tailwindcss": "^2.2.17"
 	},
 	"type": "module",
 	"dependencies": {
 		"cookie": "^0.4.1",
 		"svelte-forms-lib": "^1.10.7",
-		"yup": "^0.32.9"
+		"yup": "^0.32.11"
 	}
 }

@@ -1,6 +1,4 @@
 <script>
-  import '../app.postcss'
-
   import Header from '$lib/home/Header.svelte'
 </script>
 
@@ -15,3 +13,9 @@
     <slot />
   </main>
 </div>
+
+<style lang="postcss" global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
