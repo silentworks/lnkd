@@ -29,7 +29,7 @@
   <Loader />
   <AppHeader />
 
-  <main class="container px-5 mx-auto">
+  <div class="container px-5 mx-auto">
     <div class="w-full mx-auto md:max-w-5xl">
       <div class="flex flex-col mt-8">
         <div class="flex flex-row justify-start mb-8 border-b border-gray-500">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </div>
 
 <style>

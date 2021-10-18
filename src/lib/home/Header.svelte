@@ -1,7 +1,9 @@
 <script>
+  import { page } from '$app/stores'
+  import { contains } from '$lib/common/util'
+
   let toggle = false
   let isOpen = false
-
   const toggleNav = () => {
     toggle = !toggle
   }
@@ -23,14 +25,16 @@
           </div>
         </div>
 
-        <div class="items-center md:flex absolute right-0 top-0">
-          <div class="flex items-center py-2 -mx-1 md:mx-0">
-            <a
-              class="block px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white bg-blue-500 rounded hover:bg-blue-600 md:mx-0 md:w-auto"
-              href="/session/login">Getting Started</a
-            >
+        {#if !contains($page.path, ['/manage', '/session'])}
+          <div class="items-center md:flex absolute right-0 top-0">
+            <div class="flex items-center py-2 -mx-1 md:mx-0">
+              <a
+                class="block px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white bg-blue-500 rounded hover:bg-blue-600 md:mx-0 md:w-auto"
+                href="/session/login">Getting Started</a
+              >
+            </div>
           </div>
-        </div>
+        {/if}
       </div>
     </div>
   </div>

@@ -1,13 +1,13 @@
 <script>
+  import { page } from '$app/stores'
+  import { contains } from '$lib/common/util'
   import Header from '$lib/home/Header.svelte'
 </script>
 
-<svelte:head>
-  <title>Lnkd</title>
-</svelte:head>
-
 <div class="wrapper">
-  <Header />
+  {#if !contains($page.path, ['/manage'])}
+    <Header />
+  {/if}
 
   <main>
     <slot />
