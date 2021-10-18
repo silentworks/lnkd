@@ -2,6 +2,10 @@
   import Section from '$lib/home/Section.svelte'
 </script>
 
+<svelte:head>
+  <title>Lnkd</title>
+</svelte:head>
+
 <Section class="bg-gray-200">
   <div class="grid grid-cols-12">
     <div class="flex flex-col col-span-12 relative">

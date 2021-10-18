@@ -3,9 +3,29 @@ on:
   push:
     branches:
       - main
-  pull_request: {}
 
 jobs:
+  database-migration:
+    name: Database migration
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - name: Checkout app
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        run: npm install pnpm && pnpm i
+
+      - name: Check migration status
+        run: pnpm m:status
+
+      - name: Run migration
+        run: pnpm m:up
+
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest

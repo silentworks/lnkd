@@ -2,7 +2,7 @@
   import { createForm } from 'svelte-forms-lib'
   import * as yup from 'yup'
   import Alert from '$lib/common/Alert.svelte'
-  import { slugify } from '$lib/common/text.js'
+  import { slugify } from '$lib/common/util.js'
   import { addList } from '$lib/queries/lists/addList'
   import { goto } from '$app/navigation'
 
