@@ -11,18 +11,11 @@
   }
 </script>
 
-<script>
-  import { session } from '$app/stores'
-  import { Loader } from '$lib/common/loader'
-</script>
-
 <svelte:head>
   <title>Lnkd</title>
 </svelte:head>
 
 <div class="wrapper">
-  <Loader />
-
   <main>
     <div class="flex flex-col h-screen bg-gray-100">
       <div class="grid mx-2 my-20 place-items-center sm:my-auto">
