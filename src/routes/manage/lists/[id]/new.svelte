@@ -1,11 +1,11 @@
 <script>
   import { createForm } from 'svelte-forms-lib'
   import * as yup from 'yup'
-  //   import { addLink } from '@/supabase.js'
   import ModalWithTitleBar, { closeModal } from '$lib/common/ModalWithTitleBar.svelte'
   import Alert from '$lib/common/Alert.svelte'
   import { page } from '$app/stores'
   import { goto } from '$app/navigation'
+  import { addLink } from '$lib/queries/lists/addLink'
 
   let message = ''
   let messageType = 'error'
@@ -21,16 +21,16 @@
     }),
     onSubmit: async ({ title, url }) => {
       message = ''
-      //   const response = await addLink({ list_id: meta.params.uid, title, url })
+      const response = await addLink({ list_id: $page.params.id, title, url })
 
-      //   if (response.statusCode === 200) {
-      //     messageType = 'success'
-      //     closeModal()
-      //   }
+      if (response.statusCode === 200) {
+        messageType = 'success'
+        closeModal()
+      }
 
-      //   if (response.statusCode === 400) messageType = 'error'
+      if (response.statusCode === 400) messageType = 'error'
 
-      //   message = response.message
+      message = response.message
     }
   })
 

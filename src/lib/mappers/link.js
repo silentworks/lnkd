@@ -19,8 +19,9 @@ export const createLinkMapper = (props) => ({
   list_id: props.list_id,
   title: props.title,
   type: withDefault(props.type, 'website'),
+  description: withDefault(props.description, ''),
   url: props.url,
-  published: withDefault(props.published, false)
+  published: withDefault(props.published, 0)
 })
 
 export const createListLinkMapper = (props) => ({

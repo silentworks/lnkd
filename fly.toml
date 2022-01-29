@@ -1,6 +1,6 @@
-# fly.toml file generated for bitter-star-8859 on 2021-09-28T21:41:21Z
+# fly.toml file generated for lnkd on 2021-12-31T13:13:31Z
 
-app = "bitter-star-8859"
+app = "lnkd"
 
 kill_signal = "SIGINT"
 kill_timeout = 5

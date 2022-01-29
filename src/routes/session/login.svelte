@@ -4,13 +4,17 @@
   import Alert from '$lib/common/Alert.svelte'
   import PageHeading from '$lib/auth/PageHeading.svelte'
   import GitHubButton from '$lib/common/buttons/GitHubButton.svelte'
-  import { signInMagicLink } from '$lib/queries/auth'
+  import { signInGitHub, signInMagicLink } from '$lib/queries/auth'
   import { VITE_PUBLIC_APP_LINK_URL } from '$lib/env'
 
   let message = ''
   let messageType = 'error'
 
   const redirectTo = `${VITE_PUBLIC_APP_LINK_URL}manage/logging-in`
+
+  const handleGitHub = async () => {
+    await signInGitHub({ redirectTo })
+  }
 
   const { form, errors, handleChange, handleSubmit, handleReset, isValid, isSubmitting } =
     createForm({
@@ -71,5 +75,5 @@
   </div>
 
   <!-- Another Auth Routes -->
-  <GitHubButton />
+  <GitHubButton on:action={handleGitHub} />
 </form>

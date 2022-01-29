@@ -16,6 +16,21 @@ export const signInMagicLink = async ({ email, redirectTo }) => {
   })
 }
 
+export const signInGitHub = async ({ redirectTo }) => {
+  const { error } = await supabase.auth.signIn({ provider: 'github' }, { redirectTo })
+
+  if (!error) {
+    return successMapper({
+      message: 'Redirecting to GitHub...'
+    })
+  }
+
+  return errorMapper({
+    message: error.message,
+    code: 400
+  })
+}
+
 export const signOut = async () => {
   const { data, error } = await supabase.auth.signOut()
 

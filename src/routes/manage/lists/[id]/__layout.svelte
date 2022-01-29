@@ -21,7 +21,7 @@
   import { getListById, getListBySlug } from '$lib/queries/lists/getList'
 
   export let item
-  let links = []
+  let links = item.links
   let id = ''
 
   $: id = $page.params.id
