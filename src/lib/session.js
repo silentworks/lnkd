@@ -26,7 +26,7 @@ export const getLoggedInUser = async (fetch) => {
   }
 }
 
-export const checkIfLoggedIn = ({ session, page }, data = {}) => {
+export const checkIfLoggedIn = ({ session }, data = {}) => {
   if (!session?.user?.id) {
     return {
       status: 307,

@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({ page }) {
-    const res = await getListById(page.params.id)
+  export async function load({ params }) {
+    const res = await getListById(params.id)
 
     if (res.statusCode == 200) {
       return {

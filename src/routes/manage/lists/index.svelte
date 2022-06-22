@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ page, session }) {
+  export async function load() {
     const res = await getAllLists()
 
     if (res.statusCode == 200) {

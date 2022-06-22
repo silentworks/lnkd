@@ -2,7 +2,7 @@
 	"name": "lnkd",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
+		"dev": "svelte-kit dev --port 3003",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"start": "node build/index.js",
