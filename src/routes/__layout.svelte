@@ -5,7 +5,7 @@
 </script>
 
 <div class="wrapper">
-  {#if !contains($page.path, ['/manage'])}
+  {#if !contains($page.url.pathname, ['/manage'])}
     <Header />
   {/if}
 

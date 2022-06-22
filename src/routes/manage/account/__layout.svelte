@@ -10,8 +10,8 @@
 
 <div class="col-span-12 md:col-span-2">
   <div class="space-y-4">
-    <Tab href="/manage/account" active={$page.path == '/manage/account'}>Profile</Tab>
-    <Tab href="/manage/account/settings" active={$page.path == '/manage/account/settings'}
+    <Tab href="/manage/account" active={$page.url.pathname == '/manage/account'}>Profile</Tab>
+    <Tab href="/manage/account/settings" active={$page.url.pathname == '/manage/account/settings'}
       >Settings</Tab
     >
   </div>

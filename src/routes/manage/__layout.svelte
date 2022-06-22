@@ -33,7 +33,7 @@
     <div class="w-full mx-auto md:max-w-5xl">
       <div class="flex flex-col mt-8">
         <div class="flex flex-row justify-start mb-8 border-b border-gray-500">
-          <SubNav pagePath={$page.path} />
+          <SubNav pagePath={$page.url.pathname} />
         </div>
         <div class="grid grid-cols-12">
           <slot />

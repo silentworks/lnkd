@@ -25,7 +25,7 @@
           </div>
         </div>
 
-        {#if !contains($page.path, ['/manage', '/session'])}
+        {#if !contains($page.url.pathname, ['/manage', '/session'])}
           <div class="items-center md:flex absolute right-0 top-0">
             <div class="flex items-center py-2 -mx-1 md:mx-0">
               <a

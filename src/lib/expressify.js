@@ -6,11 +6,12 @@ import * as cookie from 'cookie';
  * @param {Express.Request} req
  * @returns Express.Request
  */
-export function toExpressRequest(req) {
+export function toExpressRequest(req, body = {}) {
   return {
-    ...req,
-    cookies: cookie.parse(req.headers.cookie || '')
-  };
+		body,
+		headers: { host: req.headers.get('host') },
+		cookies: cookie.parse(req.headers.get('cookie') || '')
+	}
 }
 
 /**
@@ -20,19 +21,9 @@ export function toExpressRequest(req) {
  */
 export function toExpressResponse(resp) {
   return {
-    ...resp,
-    getHeader: (header) => resp.headers[header.toLowerCase()],
-    setHeader: (header, value) => (resp.headers[header.toLowerCase()] = value),
-    status: (_) => ({ json: (_) => {} })
-  };
-}
-
-/**
- * Converts an Express style response to a SvelteKit compatible response
- * @param {Express.Response} resp
- * @returns SvelteKit.Response
- */
-export function toSvelteKitResponse(resp) {
-  const { getHeader, setHeader, ...returnAbleResp } = resp;
-  return returnAbleResp;
+		...resp,
+		getHeader: (header) => resp.headers.get(header.toLowerCase()),
+		setHeader: (header, value) => resp.headers.set(header.toLowerCase(), value),
+		status: (_) => ({ json: (_) => {}, end: (_) => {} })
+	}
 }
